@@ -173,7 +173,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="mt-5 text-center text-sm opacity-50">
+        <div className="mt-5 text-center text-[0.8rem] opacity-50">
           © 2026 Feeding Kyoto | Todos los derechos y copyright reservados.
         </div>
       </div>

@@ -1,14 +1,16 @@
-import Card from '@/components/Card';
+import Card from '@/Components/Card';
 
 const CardsGrid = ({ items, title }) => {
 
   return (
-    <div className='mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-8 sm:gap-7 sm:px-6 sm:py-10 lg:grid-cols-3 lg:gap-8 lg:px-8 xl:grid-cols-4 xl:py-14'>
-      <h2 className='col-span-full text-3xl font-black tracking-tight text-white sm:text-4xl'>{title}</h2>
-      {items.map(({id, name, rating, image, cuisine}, index) =>
-       <Card key={index} name={name} rating={rating} image={image} cuisine ={cuisine} id={id} />
-      )}
-    </div>
+    <section id='menu' className='px-[50px] py-20'>
+      <h2 className='mb-10 text-center text-[2.5rem] font-bold'>{title}</h2>
+      <div className='grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[30px]'>
+        {items.map(({id, name, rating, image, cuisine, tags}, index) =>
+         <Card key={index} name={name} rating={rating} image={image} cuisine={cuisine} tags={tags} id={id} />
+        )}
+      </div>
+    </section>
   );
 };
 

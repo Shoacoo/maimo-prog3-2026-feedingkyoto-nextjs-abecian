@@ -1,4 +1,4 @@
-import RecipeContainer from "@/containers/RecipeContainer"
+import RecipeContainer from "@/Containers/RecipeContainer"
 
 const page = async ({params}) => {
   const {id} = await params;

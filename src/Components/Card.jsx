@@ -1,27 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({ id, name, rating, image, cuisine }) => {
+const Card = ({ id, name, rating, image, cuisine, tags }) => {
   return (
-  
-    <div
-      className="
-        w-full
-        max-w-[320px]
-        overflow-hidden
-        rounded-[20px]
-        bg-[#161616]
-        transition-all
-        duration-300
-        hover:-translate-y-2
-        hover:scale-[1.02]
-        cursor-pointer
-        flex
-        flex-col
-        h-full
-      "
-    >
-      <div className="relative w-full h-[220px]">
+    <div className="overflow-hidden rounded-[20px] bg-[#161616] transition-all duration-400 hover:-translate-y-2.5 hover:scale-[1.02]">
+      <div className="relative h-[220px] w-full">
         <Image
           src={image}
           alt={name}
@@ -30,61 +13,32 @@ const Card = ({ id, name, rating, image, cuisine }) => {
         />
       </div>
 
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="mb-3 text-[1.2rem] font-semibold text-[#f5e6d3] line-clamp-2">
-          {name}
-        </h3>
+      <h3 className="p-[15px] text-[1.2rem] font-bold">
+        {name}
+      </h3>
 
-        <div className="mb-4 flex gap-2 flex-wrap">
-          <span
-            className="
-              rounded-full
-              bg-[#BB2026]
-              px-3
-              py-1
-              text-sm
-              text-white
-            "
-          >
-            {cuisine}
-          </span>
+      {tags.map((tag) =>
+        <h4 key={tag} className="ml-2.5 inline-block rounded-[20px] bg-[#BB2026] px-3 py-1.5 font-bold text-white">
+          {tag}
+        </h4>
+      )}
 
-          <span
-            className="
-              rounded-full
-              bg-[#BB2026]
-              px-3
-              py-1
-              text-sm
-              text-white
-            "
-          >
-            ✪ {rating}
-          </span>
-        </div>
+      <h5 className="px-[15px] py-2.5 text-sm font-bold">
+        ✪ {rating}
+      </h5>
 
-        <Link
-          href={`/recipe/${id}`}
-          className="
-            w-full
-            rounded-full
-            border
-            border-[#BB2026]
-            p-2
-            text-[#f5e6d3]
-            transition-all
-            duration-300
-            hover:bg-[#BB2026]
-            text-center
-            mt-auto
-          "
-        >
-          Ver más
-        </Link>
-      </div>
+      <p className="p-[15px]">
+        {cuisine}
+      </p>
+
+      <Link
+        href={`/recipe/${id}`}
+        className="m-[15px] block rounded-[25px] border border-[#BB2026] p-2.5 text-center transition-all duration-300 hover:bg-[#BB2026]"
+      >
+        Ver más
+      </Link>
     </div>
   );
 };
-
 
 export default Card;

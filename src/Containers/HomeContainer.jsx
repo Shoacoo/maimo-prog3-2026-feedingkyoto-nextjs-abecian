@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import CardsGrid from '@/components/CardsGrid';
+import CardsGrid from '@/Components/CardsGrid';
 import axios from 'axios';
 import Hero from '@/Components/Hero';
 
@@ -38,9 +38,9 @@ const HomeContainer = () => {
 
   return (
     <div>
-      <section className='bg-slate-900'>
+      <section>
        <Hero/>
-        {!loading && <CardsGrid items={items} />}
+        {!loading && <CardsGrid items={items} title='Recetas recomendadas' />}
         {loading && <div>LOADING....</div>}
 
         {error && <div>{errorMsg}</div>}

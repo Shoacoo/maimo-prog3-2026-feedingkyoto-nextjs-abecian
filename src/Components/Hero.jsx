@@ -9,13 +9,13 @@ const Hero = () => {
         alt="Hero Sushi"
         fill
         priority
-        className="object-cover"
+        className="object-cover brightness-[40%]"
       />
 
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative text-center">
-        <h1 className="mb-2.5 text-6xl font-bold text-[#f5e6d3] max-md:text-4xl">
+        <h1 className="mb-2.5 text-[4rem] font-bold text-[#f5e6d3] max-md:text-[2.5rem]">
           El concepto del Sushi
         </h1>
 
